@@ -76,7 +76,7 @@ const pilots = [
     description: "A small paid pilot for students who want more than theory: hands-on ICT, Python, web development and guided lab work with practicing engineers.",
     points: ["Grades 6–11 and beginner coders", "1:1 workstation model", "Sinhala and English support", "Weekend cohort or one-to-one mentoring"],
     cta: "Ask about the next cohort",
-    href: `${WHATSAPP_BASE}?text=${encodeURIComponent("Hi Yasith, I would like to ask about the next Ceylon IT Academy pilot cohort.")}`,
+    href: `${WHATSAPP_BASE}?text=${encodeURIComponent("Hi SF Techworks, I would like to ask about the next Ceylon IT Academy pilot cohort.")}`,
     tone: "lime",
   },
   {
@@ -86,7 +86,7 @@ const pilots = [
     description: "Paid astrology and numerology reports or consultations, packaged with a clear booking flow and responsible expectations.",
     points: ["Digital birth-chart reports", "Numerology and relationship readings", "Private online consultation", "Sinhala and English delivery"],
     cta: "Ask about a report",
-    href: `${WHATSAPP_BASE}?text=${encodeURIComponent("Hi Yasith, I would like to ask about a Sadeepa Astroveda report or consultation.")}`,
+    href: `${WHATSAPP_BASE}?text=${encodeURIComponent("Hi SF Techworks, I would like to ask about a Sadeepa Astroveda report or consultation.")}`,
     tone: "gold",
   },
   {
@@ -96,7 +96,7 @@ const pilots = [
     description: "A narrow pilot connecting households and small businesses with verified technicians for practical technology tasks.",
     points: ["Wi-Fi and router setup", "CCTV and device coordination", "Computer and printer support", "Manual booking while the network is validated"],
     cta: "Join the pilot waitlist",
-    href: `${WHATSAPP_BASE}?text=${encodeURIComponent("Hi Yasith, I want to join or use the SmartSriLanka IT home-support pilot.")}`,
+    href: `${WHATSAPP_BASE}?text=${encodeURIComponent("Hi SF Techworks, I want to join or use the SmartSriLanka IT home-support pilot.")}`,
     tone: "blue",
   },
 ];
@@ -120,7 +120,7 @@ const faqs = [
   },
   {
     question: "Are the education and astrology services separate from engineering work?",
-    answer: "Yes. Ceylon IT Academy and Sadeepa Astroveda have separate offers and enquiry paths. The engineering service is delivered through the Yasith Fonseka and NanoTech ICT Solutions brand.",
+    answer: "Yes. Ceylon IT Academy and Sadeepa Astroveda have separate offers and enquiry paths. SF Techworks is the dedicated engineering brand, led by Yasith Fonseka.",
   },
 ];
 
@@ -145,7 +145,7 @@ export default function Home() {
     const name = String(form.get("name") ?? "");
     const contact = String(form.get("contact") ?? "");
     const details = String(form.get("details") ?? "");
-    const message = `Hi Yasith, I am ${name}. I am interested in: ${selectedService}. Contact: ${contact}. Project details: ${details}`;
+    const message = `Hi SF Techworks, I am ${name}. I am interested in: ${selectedService}. Contact: ${contact}. Project details: ${details}`;
     setSubmitted(true);
     window.open(`${WHATSAPP_BASE}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
@@ -158,14 +158,14 @@ export default function Home() {
           <button className="wordmark" onClick={() => handleNav("top")} aria-label="Back to top">
             <span className="wordmark-mark">YF</span>
             <span>
-              <strong>Yasith Fonseka</strong>
-              <small>technology / systems / learning</small>
+              <strong>SF Techworks</strong>
+              <small>software / infrastructure / automation</small>
             </span>
           </button>
           <nav className={`main-nav ${menuOpen ? "is-open" : ""}`} aria-label="Main navigation">
             <button onClick={() => handleNav("services")}>Services</button>
             <button onClick={() => handleNav("pilots")}>Projects in motion</button>
-            <button onClick={() => handleNav("about")}>Why Yasith</button>
+            <button onClick={() => handleNav("about")}>Why SF Techworks</button>
             <button onClick={() => handleNav("contact")} className="nav-cta">Start a conversation <ArrowUpRight size={15} /></button>
           </nav>
           <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation" aria-expanded={menuOpen}>
@@ -191,11 +191,11 @@ export default function Home() {
                 <span><strong>99.9%</strong> reliability mindset</span>
               </div>
             </div>
-            <div className="signal-card" aria-label="Yasith Fonseka capability snapshot">
+            <div className="signal-card" aria-label="SF Techworks capability snapshot">
               <div className="signal-head"><span>CAPABILITY / 2026</span><span className="signal-live"><i /> live</span></div>
               <div className="signal-title">Systems that hold up<br /><span>under real use.</span></div>
               <div className="terminal-window">
-                <div className="terminal-top"><span className="terminal-dot red" /><span className="terminal-dot yellow" /><span className="terminal-dot green" /><span className="terminal-name">yasith@workbench:~</span></div>
+                <div className="terminal-top"><span className="terminal-dot red" /><span className="terminal-dot yellow" /><span className="terminal-dot green" /><span className="terminal-name">sftechworks@build:~</span></div>
                 <div className="terminal-body">
                   <p><span className="terminal-prompt">$</span> map --your-next-system</p>
                   <p className="terminal-muted">understand the problem first</p>
@@ -225,7 +225,7 @@ export default function Home() {
         <section id="services" className="section section-light">
           <div className="container">
             <div className="section-heading heading-split">
-              <div><p className="section-label">02 / Work with Yasith</p><h2>Choose the outcome.<br /><span>Keep the scope clear.</span></h2></div>
+              <div><p className="section-label">02 / Work with SF Techworks</p><h2>Choose the outcome.<br /><span>Keep the scope clear.</span></h2></div>
               <p>Start small, make the result measurable, and build from evidence. These packages are designed for businesses that need a capable technical partner without adding a full-time team.</p>
             </div>
             <div className="services-list">
@@ -261,12 +261,12 @@ export default function Home() {
 
         <section id="about" className="section section-paper">
           <div className="container about-grid">
-            <div className="about-statement"><p className="section-label">04 / Why Yasith</p><h2>Discipline builds character. <em>Knowledge creates possibilities.</em></h2><p>Yasith Fonseka brings together software engineering, systems administration, military leadership, data-science research and entrepreneurship. That combination shapes how he works: structured enough to be dependable, curious enough to find a better way.</p><a className="text-link dark-link" href="https://yasithsfonseka.web.app/" target="_blank" rel="noreferrer">View the full professional profile <ArrowUpRight size={16} /></a></div>
+            <div className="about-statement"><p className="section-label">04 / Why SF Techworks</p><h2>Discipline builds character. <em>Knowledge creates possibilities.</em></h2><p>SF Techworks combines Yasith Fonseka's software engineering, systems administration, military leadership, data-science research and entrepreneurial thinking. You get a technical partner who is structured enough to be dependable and curious enough to find a better way.</p><a className="text-link dark-link" href="https://yasithsfonseka.web.app/" target="_blank" rel="noreferrer">View the full professional profile <ArrowUpRight size={16} /></a></div>
             <div className="credential-stack">
               <div className="credential"><div className="credential-icon"><Terminal size={20} /></div><div><strong>Software engineering</strong><span>Laravel · Angular · React · Spring Boot · APIs</span></div></div>
               <div className="credential"><div className="credential-icon"><MonitorCog size={20} /></div><div><strong>Systems & infrastructure</strong><span>RHEL · Linux operations · Oracle · CI/CD · HA</span></div></div>
               <div className="credential"><div className="credential-icon"><Database size={20} /></div><div><strong>Data science in progress</strong><span>M.Sc. Data Science · AI · predictive analytics</span></div></div>
-              <div className="credential"><div className="credential-icon"><LifeBuoy size={20} /></div><div><strong>Teaching & entrepreneurship</strong><span>NanoTech · Ceylon IT Academy · Sadeepa Astroveda</span></div></div>
+              <div className="credential"><div className="credential-icon"><LifeBuoy size={20} /></div><div><strong>Founder-led delivery</strong><span>SF Techworks · Ceylon IT Academy · Sadeepa Astroveda</span></div></div>
             </div>
           </div>
         </section>
@@ -289,13 +289,18 @@ export default function Home() {
 
         <section id="contact" className="contact-section">
           <div className="container contact-grid">
-            <div className="contact-copy"><p className="section-label">07 / Start here</p><h2>Make the next<br /><em>technical move.</em></h2><p>Tell me what you are trying to improve. A short message is enough to begin; I will reply with the most sensible next step.</p><div className="direct-contact"><a href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hi Yasith, I would like to discuss a technology project.")}`} target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp <ArrowUpRight size={14} /></a><a href={`mailto:${EMAIL}`}><Mail size={18} /> {EMAIL} <ArrowUpRight size={14} /></a></div><div className="contact-note"><ShieldCheck size={17} /><span>Your details are used only to understand your enquiry and respond.</span></div></div>
-            <form className="enquiry-form" onSubmit={handleSubmit}><div className="form-header"><span>QUALIFIED ENQUIRY</span><span>01—04</span></div><label>Your name<input name="name" required placeholder="e.g. Nimal Perera" /></label><label>WhatsApp or email<input name="contact" required placeholder="How should I reach you?" /></label><label>What can I help with?<select value={selectedService} onChange={(event) => setSelectedService(event.target.value)}><option>Business website launch</option><option>Workflow system</option><option>Infrastructure health check</option><option>Monthly technical support</option><option>Ceylon IT Academy</option><option>Sadeepa Astroveda</option><option>SmartSriLanka IT home-support</option><option>Not sure yet</option></select></label><label>Give me the short version<textarea name="details" required placeholder="What are you trying to improve, and when would you like to start?" rows={4} /></label><button className="button button-primary form-submit" type="submit">Send enquiry via WhatsApp <ArrowUpRight size={17} /></button>{submitted && <p className="form-success"><Check size={16} /> Your message is ready in WhatsApp. Send it there to complete the enquiry.</p>}</form>
+            <div className="contact-copy"><p className="section-label">07 / Start here</p><h2>Make the next<br /><em>technical move.</em></h2><p>Tell me what you are trying to improve. A short message is enough to begin; I will reply with the most sensible next step.</p><div className="direct-contact"><a href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hi SF Techworks, I would like to discuss a technology project.")}`} target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp <ArrowUpRight size={14} /></a><a href={`mailto:${EMAIL}`}><Mail size={18} /> {EMAIL} <ArrowUpRight size={14} /></a></div><div className="contact-note"><ShieldCheck size={17} /><span>Your details are used only to understand your enquiry and respond.</span></div></div>
+            <form className="enquiry-form" onSubmit={handleSubmit}><div className="form-header"><span>QUALIFIED ENQUIRY</span><span>01—04</span></div><label>Your name<input name="name" required placeholder="e.g. Nimal Perera" /></label><label>WhatsApp or email<input name="contact" required placeholder="How should I reach you?" /></label><label>What can I help with?<select value={selectedService} onChange={(event) => setSelectedService(event.target.value)}><option>Business website launch</option><option>Workflow system</option><option>Infrastructure health check</option><option>Monthly technical support</option><option>Ceylon IT Academy</option><option>Sadeepa Astroveda</option><option>SmartSriLanka IT home-support</option><option>Not sure yet</option></select></label><label>Give me the short version<textarea name="details" required placeholder="What are you trying to improve, and when would you like to start?" rows={4} /></label><button className="button button-primary form-submit" type="submit">Start the WhatsApp conversation <ArrowUpRight size={17} /></button>{submitted && <p className="form-success"><Check size={16} /> Your message is ready in WhatsApp. Send it there to complete the enquiry.</p>}</form>
           </div>
         </section>
       </main>
 
-      <footer className="site-footer"><div className="container footer-grid"><div><div className="footer-brand"><span className="wordmark-mark">YF</span><strong>Yasith Fonseka</strong></div><p>Software engineering, systems thinking and useful technology for the next move.</p></div><div className="footer-links"><span>Explore</span><button onClick={() => handleNav("services")}>Services</button><button onClick={() => handleNav("pilots")}>Projects in motion</button><button onClick={() => handleNav("contact")}>Contact</button></div><div className="footer-links"><span>Elsewhere</span><a href="https://yasithsfonseka.web.app/" target="_blank" rel="noreferrer">Professional profile</a><a href="https://nanotechsolutions.netlify.app/" target="_blank" rel="noreferrer">NanoTech ICT Solutions</a><a href="https://wa.me/94772872795" target="_blank" rel="noreferrer">WhatsApp</a></div></div><div className="container footer-bottom"><span>© 2026 Yasith Fonseka</span><span>Built for clear conversations.</span></div></footer>
+      <a className="floating-whatsapp" href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hi SF Techworks, I would like to discuss a technology project.")}`} target="_blank" rel="noreferrer" aria-label="Chat with SF Techworks on WhatsApp">
+        <MessageCircle size={18} />
+        <span>Chat with SF Techworks</span>
+      </a>
+
+      <footer className="site-footer"><div className="container footer-grid"><div><div className="footer-brand"><span className="wordmark-mark">YF</span><strong>SF Techworks</strong></div><p>Software, infrastructure and intelligent digital products for growing businesses.</p></div><div className="footer-links"><span>Explore</span><button onClick={() => handleNav("services")}>Services</button><button onClick={() => handleNav("pilots")}>Projects in motion</button><button onClick={() => handleNav("contact")}>Contact</button></div><div className="footer-links"><span>Elsewhere</span><a href="https://yasithsfonseka.web.app/" target="_blank" rel="noreferrer">Professional profile</a><a href="https://yasithsfonseka.web.app/" target="_blank" rel="noreferrer">Founder profile</a><a href="https://wa.me/94772872795" target="_blank" rel="noreferrer">WhatsApp</a></div></div><div className="container footer-bottom"><span>© 2026 SF Techworks</span><span>Built for clear conversations.</span></div></footer>
     </div>
   );
 }
