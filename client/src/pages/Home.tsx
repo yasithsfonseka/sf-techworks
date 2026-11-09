@@ -2,6 +2,9 @@ import { useState } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
+  BadgeCheck,
+  BriefcaseBusiness,
+  CalendarClock,
   Check,
   ChevronDown,
   Code2,
@@ -27,6 +30,18 @@ import {
 const WHATSAPP_NUMBER = "94772872795";
 const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 const EMAIL = "yasithsfonsekaw@gmail.com";
+
+const audienceCards = [
+  { title: "Growing businesses", copy: "Replace scattered tools with a website, workflow or support plan your team can actually use." },
+  { title: "Education and training", copy: "Give students, parents and staff a clearer digital experience with practical systems and support." },
+  { title: "Teams with existing software", copy: "Improve reliability, backups, deployment and day-to-day maintenance without hiring a full-time team." },
+];
+
+const caseStudies = [
+  { label: "Enterprise operations", title: "Mission-critical workflows", copy: "Designed and delivered dependable enterprise web workflows, role-based access and reporting for institutional operations.", tags: "Laravel · Angular · MySQL · REST APIs" },
+  { label: "Production infrastructure", title: "High-availability operations", copy: "Supported production environments through release coordination, server health checks, failover awareness and database maintenance.", tags: "RHEL · Oracle · Jenkins · HA" },
+  { label: "Product thinking", title: "From idea to usable pilot", copy: "Turning business ideas into focused digital products with a clear first release, customer pathway and feedback loop.", tags: "Discovery · UX · Full-stack · Iteration" },
+];
 
 const servicePackages = [
   {
@@ -143,9 +158,12 @@ export default function Home() {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const name = String(form.get("name") ?? "");
+    const business = String(form.get("business") ?? "");
     const contact = String(form.get("contact") ?? "");
+    const budget = String(form.get("budget") ?? "Not specified");
+    const startDate = String(form.get("startDate") ?? "Not specified");
     const details = String(form.get("details") ?? "");
-    const message = `Hi SF Techworks, I am ${name}. I am interested in: ${selectedService}. Contact: ${contact}. Project details: ${details}`;
+    const message = `Hi SF Techworks, I am ${name} from ${business || "my business"}. I am interested in: ${selectedService}. Contact: ${contact}. Budget: ${budget}. Preferred start: ${startDate}. Project details: ${details}`;
     setSubmitted(true);
     window.open(`${WHATSAPP_BASE}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
@@ -222,10 +240,30 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section section-paper audience-section">
+          <div className="container">
+            <div className="section-heading heading-split">
+              <div><p className="section-label">02 / Who we help</p><h2>Technology that fits<br /><span>the way you work.</span></h2></div>
+              <p>SF Techworks is a good fit when the business is growing, the current process is becoming painful, and you want a thoughtful technical partner instead of another generic vendor.</p>
+            </div>
+            <div className="audience-grid">{audienceCards.map((item, index) => <article className="audience-card" key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}</div>
+          </div>
+        </section>
+
+        <section className="section section-light proof-section">
+          <div className="container">
+            <div className="section-heading heading-split">
+              <div><p className="section-label">03 / Experience that matters</p><h2>Built around<br /><span>real operations.</span></h2></div>
+              <p>Confidential environments cannot always be shown publicly. These proof points describe the kind of work and thinking you can expect without exposing protected information.</p>
+            </div>
+            <div className="case-grid">{caseStudies.map((item) => <article className="case-card" key={item.title}><div className="case-card-top"><span>{item.label}</span><BadgeCheck size={20} /></div><h3>{item.title}</h3><p>{item.copy}</p><small>{item.tags}</small></article>)}</div>
+          </div>
+        </section>
+
         <section id="services" className="section section-light">
           <div className="container">
             <div className="section-heading heading-split">
-              <div><p className="section-label">02 / Work with SF Techworks</p><h2>Choose the outcome.<br /><span>Keep the scope clear.</span></h2></div>
+              <div><p className="section-label">04 / Work with SF Techworks</p><h2>Choose the outcome.<br /><span>Keep the scope clear.</span></h2></div>
               <p>Start small, make the result measurable, and build from evidence. These packages are designed for businesses that need a capable technical partner without adding a full-time team.</p>
             </div>
             <div className="services-list">
@@ -247,7 +285,7 @@ export default function Home() {
         <section id="pilots" className="section section-dark">
           <div className="container">
             <div className="section-heading heading-split dark-heading">
-              <div><p className="section-label">03 / Projects in motion</p><h2>Three focused pilots.<br /><span>Real people, real use.</span></h2></div>
+              <div><p className="section-label">05 / Projects in motion</p><h2>Three focused pilots.<br /><span>Real people, real use.</span></h2></div>
               <p>Alongside client work, Yasith is validating three practical ventures. Each has a separate purpose, a smaller first step and a clear way to join.</p>
             </div>
             <div className="pilot-grid">
@@ -261,7 +299,7 @@ export default function Home() {
 
         <section id="about" className="section section-paper">
           <div className="container about-grid">
-            <div className="about-statement"><p className="section-label">04 / Why SF Techworks</p><h2>Discipline builds character. <em>Knowledge creates possibilities.</em></h2><p>SF Techworks combines Yasith Fonseka's software engineering, systems administration, military leadership, data-science research and entrepreneurial thinking. You get a technical partner who is structured enough to be dependable and curious enough to find a better way.</p><a className="text-link dark-link" href="https://yasithsfonseka.web.app/" target="_blank" rel="noreferrer">View the full professional profile <ArrowUpRight size={16} /></a></div>
+            <div className="about-statement"><p className="section-label">06 / Why SF Techworks</p><h2>Discipline builds character. <em>Knowledge creates possibilities.</em></h2><p>SF Techworks combines Yasith Fonseka's software engineering, systems administration, military leadership, data-science research and entrepreneurial thinking. You get a technical partner who is structured enough to be dependable and curious enough to find a better way.</p><a className="text-link dark-link" href="https://yasithsfonseka.web.app/" target="_blank" rel="noreferrer">View the full professional profile <ArrowUpRight size={16} /></a></div>
             <div className="credential-stack">
               <div className="credential"><div className="credential-icon"><Terminal size={20} /></div><div><strong>Software engineering</strong><span>Laravel · Angular · React · Spring Boot · APIs</span></div></div>
               <div className="credential"><div className="credential-icon"><MonitorCog size={20} /></div><div><strong>Systems & infrastructure</strong><span>RHEL · Linux operations · Oracle · CI/CD · HA</span></div></div>
@@ -273,7 +311,7 @@ export default function Home() {
 
         <section className="section section-light process-section">
           <div className="container">
-            <div className="section-heading"><p className="section-label">05 / How it works</p><h2>A calm process for<br /><span>complicated work.</span></h2></div>
+            <div className="section-heading"><p className="section-label">07 / How it works</p><h2>A calm process for<br /><span>complicated work.</span></h2></div>
             <div className="process-grid">
               {[{n:"01",title:"Enquire",copy:"Tell me what is slowing down the business, the team or the customer experience."},{n:"02",title:"Clarify",copy:"We discuss users, constraints, priorities, timeline and what success should look like."},{n:"03",title:"Scope",copy:"You receive a written scope, starting price and a practical next step — no mystery work."},{n:"04",title:"Move",copy:"We build, review and support the result with clear communication from start to handover."}].map((item) => <div className="process-step" key={item.n}><span>{item.n}</span><h3>{item.title}</h3><p>{item.copy}</p></div>)}
             </div>
@@ -282,15 +320,15 @@ export default function Home() {
 
         <section className="section section-paper faq-section">
           <div className="container faq-grid">
-            <div><p className="section-label">06 / Good to know</p><h2>Questions before<br /><span>we start?</span></h2><p className="faq-intro">A useful first conversation does not require a perfect brief. The clearer the constraint, the better the next decision.</p><button className="button button-dark" onClick={() => handleNav("contact")}>Ask your question <ArrowUpRight size={16} /></button></div>
+            <div><p className="section-label">08 / Good to know</p><h2>Questions before<br /><span>we start?</span></h2><p className="faq-intro">A useful first conversation does not require a perfect brief. The clearer the constraint, the better the next decision.</p><button className="button button-dark" onClick={() => handleNav("contact")}>Ask your question <ArrowUpRight size={16} /></button></div>
             <div className="faq-list">{faqs.map((faq, index) => <div className={`faq-item ${openFaq === index ? "open" : ""}`} key={faq.question}><button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} aria-expanded={openFaq === index}><span>{faq.question}</span><ChevronDown size={19} /></button>{openFaq === index && <p>{faq.answer}</p>}</div>)}</div>
           </div>
         </section>
 
         <section id="contact" className="contact-section">
           <div className="container contact-grid">
-            <div className="contact-copy"><p className="section-label">07 / Start here</p><h2>Make the next<br /><em>technical move.</em></h2><p>Tell me what you are trying to improve. A short message is enough to begin; I will reply with the most sensible next step.</p><div className="direct-contact"><a href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hi SF Techworks, I would like to discuss a technology project.")}`} target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp <ArrowUpRight size={14} /></a><a href={`mailto:${EMAIL}`}><Mail size={18} /> {EMAIL} <ArrowUpRight size={14} /></a></div><div className="contact-note"><ShieldCheck size={17} /><span>Your details are used only to understand your enquiry and respond.</span></div></div>
-            <form className="enquiry-form" onSubmit={handleSubmit}><div className="form-header"><span>QUALIFIED ENQUIRY</span><span>01—04</span></div><label>Your name<input name="name" required placeholder="e.g. Nimal Perera" /></label><label>WhatsApp or email<input name="contact" required placeholder="How should I reach you?" /></label><label>What can I help with?<select value={selectedService} onChange={(event) => setSelectedService(event.target.value)}><option>Business website launch</option><option>Workflow system</option><option>Infrastructure health check</option><option>Monthly technical support</option><option>Ceylon IT Academy</option><option>Sadeepa Astroveda</option><option>SmartSriLanka IT home-support</option><option>Not sure yet</option></select></label><label>Give me the short version<textarea name="details" required placeholder="What are you trying to improve, and when would you like to start?" rows={4} /></label><button className="button button-primary form-submit" type="submit">Start the WhatsApp conversation <ArrowUpRight size={17} /></button>{submitted && <p className="form-success"><Check size={16} /> Your message is ready in WhatsApp. Send it there to complete the enquiry.</p>}</form>
+            <div className="contact-copy"><p className="section-label">09 / Start here</p><h2>Make the next<br /><em>technical move.</em></h2><p>Tell me what you are trying to improve. A short message is enough to begin; I will reply with the most sensible next step.</p><div className="direct-contact"><a href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hi SF Techworks, I would like to book a 20-minute fit call.")}`} target="_blank" rel="noreferrer"><CalendarClock size={18} /> Book a 20-minute fit call <ArrowUpRight size={14} /></a><a href={`${WHATSAPP_BASE}?text=${encodeURIComponent("Hi SF Techworks, I would like to discuss a technology project.")}`} target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp <ArrowUpRight size={14} /></a><a href={`mailto:${EMAIL}`}><Mail size={18} /> {EMAIL} <ArrowUpRight size={14} /></a></div><div className="contact-note"><ShieldCheck size={17} /><span>Your details are used only to understand your enquiry and respond. Replies are normally sent within one business day.</span></div></div>
+            <form className="enquiry-form" onSubmit={handleSubmit}><div className="form-header"><span>QUALIFIED ENQUIRY</span><span>01—04</span></div><label>Your name<input name="name" required placeholder="e.g. Nimal Perera" /></label><label>Business or organization<input name="business" placeholder="Who is this project for?" /></label><label>WhatsApp or email<input name="contact" required placeholder="How should I reach you?" /></label><label>What can I help with?<select value={selectedService} onChange={(event) => setSelectedService(event.target.value)}><option>Business website launch</option><option>Workflow system</option><option>Infrastructure health check</option><option>Monthly technical support</option><option>Ceylon IT Academy</option><option>Sadeepa Astroveda</option><option>SmartSriLanka IT home-support</option><option>Not sure yet</option></select></label><div className="form-row"><label>Budget range<select name="budget"><option>Not sure yet</option><option>Under LKR 75,000</option><option>LKR 75,000–150,000</option><option>LKR 150,000–400,000</option><option>More than LKR 400,000</option></select></label><label>Preferred start<select name="startDate"><option>As soon as possible</option><option>Within 1 month</option><option>Within 3 months</option><option>Exploring for later</option></select></label></div><label>Give me the short version<textarea name="details" required placeholder="What are you trying to improve, and when would you like to start?" rows={4} /></label><button className="button button-primary form-submit" type="submit">Start the WhatsApp conversation <ArrowUpRight size={17} /></button>{submitted && <p className="form-success"><Check size={16} /> Your message is ready in WhatsApp. Send it there to complete the enquiry.</p>}</form>
           </div>
         </section>
       </main>
